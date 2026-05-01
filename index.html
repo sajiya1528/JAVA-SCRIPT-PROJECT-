@@ -1,28 +1,138 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My JS Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajiya Nazir - Frontend Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Sajiya Nazir</h1>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" class="dark-mode-btn">Dark Mode 🌙</button>
+        </div>
+    </nav>
 
-<nav>
-    <h2>My Portfolio</h2>
-    <ul>
-        <li onclick="navigate('home')">Home</li>
-        <li onclick="navigate('task1')">Add Text</li>
-        <li onclick="navigate('color')">Color Picker</li>
-        <li onclick="navigate('clock')">Clock</li>
-        <li onclick="navigate('calc')">Calculator</li>
-        <li onclick="navigate('slider')">Slider</li>
-        <li onclick="navigate('timer')">Timer</li>
-        <li onclick="navigate('traffic')">Traffic</li>
-    </ul>
-</nav>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <h1>Hi, I'm Sajiya Nazir</h1>
+            <p class="subtitle">Frontend Developer | JavaScript Projects</p>
+            <a href="#projects" class="btn-primary">View Projects</a>
+        </div>
+    </section>
 
-<div id="app"></div>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My JavaScript Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Dynamic Text Addition</h3>
+                    <p>Create an empty div and add a paragraph with text using JavaScript.</p>
+                    <a href="project1.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Color Picker Background</h3>
+                    <p>Use a color input to change the page background dynamically.</p>
+                    <a href="project2.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Digital Clock</h3>
+                    <p>A live digital clock showing current date and time in 12-hour format.</p>
+                    <a href="project3.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Calculator</h3>
+                    <p>A simple calculator with basic arithmetic operations.</p>
+                    <a href="project4.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Image Slider/Carousel</h3>
+                    <p>An image carousel that changes every 3 seconds or on button click.</p>
+                    <a href="project5.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>API Data Fetcher</h3>
+                    <p>Fetch data from an API and display it in an ordered list on click.</p>
+                    <a href="project6.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Timer App</h3>
+                    <p>A countdown timer with default value and user input option.</p>
+                    <a href="project7.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Traffic Signal Simulator</h3>
+                    <p>Simulate traffic lights with proper timing using setTimeout and setInterval.</p>
+                    <a href="project8.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Registration Form</h3>
+                    <p>A form with validation, captcha, and password visibility toggle.</p>
+                    <a href="project9.html" class="btn-secondary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Todo List</h3>
+                    <p>A todo list app with add, edit, and delete completed tasks functionality.</p>
+                    <a href="project10.html" class="btn-secondary">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi! I'm Sajiya Nazir, a passionate frontend developer specializing in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript. I love building projects that showcase my skills and creativity.</p>
+            <div class="skills">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div id="contact-content">
+                <form action="https://formsubmit.co/sajiyanazir28@gmail.com" method="POST" id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="hidden" name="_subject" value="New Contact Message from Portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sajiya Nazir. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/sajiya-nazir-9a956435a/" class="social-link" target="_blank" rel="noreferrer">LinkedIn: sajiya-nazir-9a956435a</a>
+              <br>
+             <a href="https://github.com/sajiya1528" class="social-link" target="_blank" rel="noreferrer">GitHub: sajiya1528</a>
+           
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

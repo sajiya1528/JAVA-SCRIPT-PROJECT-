@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3: Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        #clock {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+    <p>A live digital clock showing current date and time in 12-hour format.</p>
+    <div id="clock"></div>
+    <a href="index.html">Back to Portfolio</a>
+
+    <script>
+        function startClock() {
+            setInterval(() => {
+                let d = new Date();
+                let date = d.toDateString();
+                let h = d.getHours() % 12 || 12;
+                let m = String(d.getMinutes()).padStart(2, '0');
+                let s = String(d.getSeconds()).padStart(2, '0');
+                let ampm = d.getHours() >= 12 ? "PM" : "AM";
+                clock.innerText = `${date} ${h}:${m}:${s} ${ampm}`;
+            }, 1000);
+        }
+        startClock();
+    </script>
+</body>
+</html>

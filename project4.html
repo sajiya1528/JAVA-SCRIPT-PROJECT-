@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4: Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        #result {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: right;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .calc-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 1.2rem;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+        }
+        .calc-btn:hover {
+            background-color: #e0e0e0;
+        }
+        .calc-btn:nth-child(4n+1), .calc-btn:nth-child(4n+2), .calc-btn:nth-child(4n+3) {
+            background-color: #007bff;
+            color: white;
+        }
+        .calc-btn:nth-child(4n+1):hover, .calc-btn:nth-child(4n+2):hover, .calc-btn:nth-child(4n+3):hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <p>A simple calculator with basic arithmetic operations.</p>
+    <input id="result" disabled>
+    <br>
+    <button class="calc-btn" onclick="append('7')">7</button>
+    <button class="calc-btn" onclick="append('8')">8</button>
+    <button class="calc-btn" onclick="append('9')">9</button>
+    <button class="calc-btn" onclick="append('/')">/</button>
+    <br>
+    <button class="calc-btn" onclick="append('4')">4</button>
+    <button class="calc-btn" onclick="append('5')">5</button>
+    <button class="calc-btn" onclick="append('6')">6</button>
+    <button class="calc-btn" onclick="append('*')">*</button>
+    <br>
+    <button class="calc-btn" onclick="append('1')">1</button>
+    <button class="calc-btn" onclick="append('2')">2</button>
+    <button class="calc-btn" onclick="append('3')">3</button>
+    <button class="calc-btn" onclick="append('-')">-</button>
+    <br>
+    <button class="calc-btn" onclick="append('0')">0</button>
+    <button class="calc-btn" onclick="calculate()">=</button>
+    <button class="calc-btn" onclick="clearRes()">C</button>
+    <button class="calc-btn" onclick="append('+')">+</button>
+    <br>
+    <a href="index.html">Back to Portfolio</a>
+
+    <script>
+        function append(v) {
+            result.value += v;
+        }
+        function clearRes() {
+            result.value = "";
+        }
+        function calculate() {
+            try {
+                result.value = eval(result.value);
+            } catch {
+                result.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>

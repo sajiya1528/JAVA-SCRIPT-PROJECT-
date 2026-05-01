@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 8: Traffic Signal Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .light {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: gray;
+            margin: 10px auto;
+            transition: background 0.5s;
+        }
+        a {
+            display: inline-block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Traffic Signal Simulator</h1>
+    <p>Simulate traffic lights with proper timing using setTimeout and setInterval.</p>
+    <div id="red" class="light"></div>
+    <div id="yellow" class="light"></div>
+    <div id="green" class="light"></div>
+    <a href="index.html">Back to Portfolio</a>
+
+    <script>
+        function traffic() {
+            setInterval(() => {
+                red.style.background = "red";
+                yellow.style.background = "gray";
+                green.style.background = "gray";
+
+                setTimeout(() => {
+                    yellow.style.background = "yellow";
+                    red.style.background = "gray";
+                }, 2000);
+
+                setTimeout(() => {
+                    green.style.background = "green";
+                    yellow.style.background = "gray";
+                }, 4000);
+            }, 6000);
+        }
+        traffic();
+    </script>
+</body>
+</html>

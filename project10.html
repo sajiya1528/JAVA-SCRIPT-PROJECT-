@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 10: Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 70%;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+        li.completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        a {
+            display: inline-block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <p>A todo list app with add, edit, and delete completed tasks functionality.</p>
+    <input id="taskInput" placeholder="Add a new task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+    <a href="index.html">Back to Portfolio</a>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const task = input.value.trim();
+            if (task) {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span onclick="toggleComplete(this)">${task}</span>
+                    <div>
+                        <button onclick="editTask(this)">Edit</button>
+                        <button onclick="deleteCompleted(this)" style="background-color: #dc3545;">Delete</button>
+                    </div>
+                `;
+                document.getElementById('taskList').appendChild(li);
+                input.value = '';
+            }
+        }
+
+        function toggleComplete(span) {
+            span.parentElement.classList.toggle('completed');
+        }
+
+        function editTask(btn) {
+            const li = btn.parentElement.parentElement;
+            const span = li.querySelector('span');
+            const newText = prompt('Edit task:', span.textContent);
+            if (newText) {
+                span.textContent = newText;
+            }
+        }
+
+        function deleteCompleted(btn) {
+            const li = btn.parentElement.parentElement;
+            if (li.classList.contains('completed')) {
+                li.remove();
+            } else {
+                alert('Mark as completed first to delete.');
+            }
+        }
+    </script>
+</body>
+</html>
